@@ -1,0 +1,10 @@
+{
+  "component": {
+    "testFiles": "**/*.spec.{js,jsx}",
+    "componentFolder": "src"
+  },
+  "projectId": "5kex6t",
+  "baseUrl": "http://localhost:3000",
+  "experimentalStudio": true,
+  "testFiles": "**/*.{feature,spec.js}"
+}
