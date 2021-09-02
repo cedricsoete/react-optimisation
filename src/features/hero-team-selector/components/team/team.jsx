@@ -23,13 +23,16 @@ const totalTeam = 5;
  * @property {Hero[]} teamMembers
  * @property {string} title
  * @property {(args: {id: number})=> void} removeMember
+ * @property {string} name
  */
 
 /**
  * @type {FC<TeamProps>}
  */
-const Team = ({ teamMembers, title, removeMember }) => (
-  <div className={style['team-wrapper']}>
+const Team = ({
+  teamMembers, title, removeMember, name,
+}) => (
+  <div className={style['team-wrapper']} data-cy={`team-${name}`}>
     <h2 data-cy="team-title">{title}</h2>
     <div className={style.team}>
       {teamMembers.map((member) => (
@@ -50,6 +53,7 @@ const Team = ({ teamMembers, title, removeMember }) => (
   </div>
 );
 Team.propTypes = {
+  name: string.isRequired,
   teamMembers: arrayOf(shape({
     name: string.isRequired,
     thumb: string.isRequired,

@@ -16,7 +16,7 @@ context('hero-list', () => {
       },
     ];
     const select = cy.stub().as('select');
-    mount(<HeroList list={heroes} title="Heros" selectItem={select} />);
+    mount(<HeroList list={heroes} title="Heros" selectItem={select} name="heros" />);
     cy.get('[data-cy=hero-list-title]').should('have.text', 'Heros');
     cy.get('[data-cy=hero-list-item]').as('items');
     cy.get('@items').should('have.length', 2);
@@ -26,7 +26,7 @@ context('hero-list', () => {
       cy.get('@item').find('[data-cy=thumb]').should('have.attr', 'src').should('eq', heroes[index].thumb);
     });
 
-    cy.get('@items').eq(1).find('[data-cy=select]').click();
+    cy.get('@items').eq(1).find('[data-cy=select-IronMan]').click();
     cy.get('@select').should('have.been.calledOnceWith', heroes[1]);
   });
 });

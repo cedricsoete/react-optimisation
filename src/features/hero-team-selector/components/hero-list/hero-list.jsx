@@ -16,6 +16,7 @@ import style from './hero-list.module.scss';
 
 /**
  * @typedef {Object} HeroListProps
+ * @prop {string} name
  * @property {string} title
  * @property {Hero[]} list
  * @property {(hero: Hero) => void} selectItem
@@ -24,8 +25,10 @@ import style from './hero-list.module.scss';
 /**
  * @type {FC<HeroListProps>}
  */
-const HeroList = ({ title, list, selectItem }) => (
-  <div className={style.list}>
+const HeroList = ({
+  title, list, selectItem, name,
+}) => (
+  <div data-cy={`hero-list-${name}`} className={style.list}>
     <h2 data-cy="hero-list-title">{title}</h2>
     {
       list.map((hero) => (
@@ -41,6 +44,7 @@ const HeroList = ({ title, list, selectItem }) => (
 );
 
 HeroList.propTypes = {
+  name: string.isRequired,
   title: string.isRequired,
   list: arrayOf(shape({
     id: number.isRequired,

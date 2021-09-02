@@ -25,7 +25,7 @@ const HeroCard = ({
   const removeHandler = useCallback(() => remove({ id }));
   return (
     <div data-cy="hero-card" className={style.card}>
-      <span className={style['remove-btn']} data-cy="remove" onClick={removeHandler} role="button" tabIndex="0">X</span>
+      <span className={style['remove-btn']} data-cy={`remove-${name}`} onClick={removeHandler} role="button" tabIndex="0">X</span>
       <div className={style['img-wrapper']}>
         <img data-cy="thumb" src={thumb} alt={name} />
       </div>

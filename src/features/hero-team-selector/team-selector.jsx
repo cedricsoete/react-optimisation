@@ -41,12 +41,12 @@ const TeamSelector = () => {
 
   return (
     <div className={style['selector-wrapper']}>
-      <HeroList title="Heros" list={heroes} selectItem={addHeros} />
+      <HeroList name="heros" title="Heros" list={heroes} selectItem={addHeros} />
       <div className={style['teams-wrapper']}>
-        <Team teamMembers={heroesTeam} title="Team of Heros" removeMember={removeHeros} />
-        <Team teamMembers={wickedTeam} title="Team of Wicked" removeMember={removeWicked} />
+        <Team teamMembers={heroesTeam} title="Team of Heros" removeMember={removeHeros} name="heros" />
+        <Team teamMembers={wickedTeam} title="Team of Wicked" removeMember={removeWicked} name="wicked" />
       </div>
-      <HeroList title="Wicked" list={wicked} selectItem={addWicked} />
+      <HeroList name="wicked" title="Wicked" list={wicked} selectItem={addWicked} />
     </div>
   );
 };

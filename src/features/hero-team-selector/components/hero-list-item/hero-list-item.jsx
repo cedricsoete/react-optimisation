@@ -28,7 +28,7 @@ const HeroListItem = ({ name, thumb, select }) => (
     <div className={style['item-infos']}>
       <span data-cy="name">{name}</span>
       <div className={style.actions}>
-        <button data-cy="select" type="button" className={style.btn} onClick={select}>Select</button>
+        <button data-cy={`select-${name}`} type="button" className={style.btn} onClick={select}>Select</button>
       </div>
     </div>
   </div>

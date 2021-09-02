@@ -13,9 +13,8 @@ context('Team', () => {
         cy.get('@item').find('[data-cy=name]').should('have.text', team[index].name);
         cy.get('@item').find('[data-cy=thumb]').should('have.attr', 'src').should('eq', team[index].thumb);
       });
-
-      cy.log('test suppression');
-      cy.get('@cards').eq('2').find('[data-cy=remove]').click();
+      cy.log('Test suppression');
+      cy.get('@cards').eq('2').find('[data-cy=remove-IronMan]').click();
       cy.get('@remove').should('have.been.calledOnceWith', { id: team[2].id });
     });
   });

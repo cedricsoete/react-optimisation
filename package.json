@@ -8,6 +8,7 @@
     "lint": "eslint . --ext js --ext jsx",
     "start": "concurrently --kill-others \"json-server --watch db.json --port 8080\" \"vite\"",
     "test": "cypress open-ct",
+    "test:ci": "cypress run-ct",
     "cypress": "cypress open"
   },
   "dependencies": {
