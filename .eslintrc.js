@@ -31,6 +31,26 @@ module.exports = {
       },
     },
     {
+      files: ['cypress/**/*.js', 'src/**/*.spec.jsx'],
+      plugins: [
+        'cypress',
+        'chai-friendly',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 0,
+      },
+      extends: [
+        'plugin:cypress/recommended',
+        'plugin:chai-friendly/recommended',
+      ],
+      env: {
+        'cypress/globals': true,
+      },
+      globals: {
+        cy: true,
+      },
+    },
+    {
       files: ['**/*.js'],
       rules: {
         'import/prefer-default-export': 0,
