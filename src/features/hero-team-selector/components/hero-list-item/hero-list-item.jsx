@@ -23,12 +23,12 @@ import style from './hero-list-item.module.scss';
  * @type {FC<HeroListItemProps>}
  */
 const HeroListItem = ({ name, thumb, select }) => (
-  <div className={style.item}>
-    <img src={thumb} alt={name} />
+  <div data-cy="hero-list-item" className={style.item}>
+    <img data-cy="thumb" src={thumb} alt={name} />
     <div className={style['item-infos']}>
-      <span>{name}</span>
+      <span data-cy="name">{name}</span>
       <div className={style.actions}>
-        <button type="button" className={style.btn} onClick={select}>Select</button>
+        <button data-cy="select" type="button" className={style.btn} onClick={select}>Select</button>
       </div>
     </div>
   </div>

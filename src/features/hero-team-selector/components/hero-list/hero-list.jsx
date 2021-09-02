@@ -26,7 +26,7 @@ import style from './hero-list.module.scss';
  */
 const HeroList = ({ title, list, selectItem }) => (
   <div className={style.list}>
-    <h2>{title}</h2>
+    <h2 data-cy="hero-list-title">{title}</h2>
     {
       list.map((hero) => (
         <HeroListItem
