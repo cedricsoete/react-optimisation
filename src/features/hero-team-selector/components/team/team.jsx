@@ -30,7 +30,7 @@ const totalTeam = 5;
  */
 const Team = ({ teamMembers, title, removeMember }) => (
   <div className={style['team-wrapper']}>
-    <h2>{title}</h2>
+    <h2 data-cy="team-title">{title}</h2>
     <div className={style.team}>
       {teamMembers.map((member) => (
         <HeroCard

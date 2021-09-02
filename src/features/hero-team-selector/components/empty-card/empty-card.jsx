@@ -10,7 +10,7 @@ import { card } from './empty-card.module.scss';
  * @type {FC<{}>}
  */
 const EmptyCard = () => (
-  <div className={card}>
+  <div data-cy="empty-card" className={card}>
     <img src="/img/default-member.jpg" alt="Empty Slot" />
   </div>
 );
