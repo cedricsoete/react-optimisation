@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+import { memo } from 'react';
 import {
   arrayOf, shape, string, func, number,
 } from 'prop-types';
@@ -62,4 +63,4 @@ Team.propTypes = {
   removeMember: func.isRequired,
 };
 
-export default Team;
+export default memo(Team);

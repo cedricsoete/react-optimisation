@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+import { memo, useCallback } from 'react';
 import { string, func, number } from 'prop-types';
 import style from './hero-card.module.scss';
 
@@ -21,7 +22,7 @@ import style from './hero-card.module.scss';
 const HeroCard = ({
   name, thumb, remove, id,
 }) => {
-  const removeHandler = () => remove({ id });
+  const removeHandler = useCallback(() => remove({ id }));
   return (
     <div data-cy="hero-card" className={style.card}>
       <span className={style['remove-btn']} data-cy={`remove-${name}`} onClick={removeHandler} role="button" tabIndex="0">X</span>
@@ -41,4 +42,4 @@ HeroCard.propTypes = {
   id: number.isRequired,
 };
 
-export default HeroCard;
+export default memo(HeroCard);

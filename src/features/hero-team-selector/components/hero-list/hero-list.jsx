@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import {
   shape, string, arrayOf, func, number, bool,
 } from 'prop-types';
@@ -60,4 +61,4 @@ HeroList.defaultProps = {
   canSelect: false,
 };
 
-export default HeroList;
+export default memo(HeroList);

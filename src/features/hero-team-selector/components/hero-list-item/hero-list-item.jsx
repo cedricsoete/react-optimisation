@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { string, func, bool } from 'prop-types';
 import style from './hero-list-item.module.scss';
 
@@ -49,4 +50,4 @@ HeroListItem.defaultProps = {
   canSelect: false,
 };
 
-export default HeroListItem;
+export default memo(HeroListItem);

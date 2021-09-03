@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { card } from './empty-card.module.scss';
 
 /**
@@ -14,4 +15,4 @@ const EmptyCard = () => (
   </div>
 );
 
-export default EmptyCard;
+export default memo(EmptyCard);

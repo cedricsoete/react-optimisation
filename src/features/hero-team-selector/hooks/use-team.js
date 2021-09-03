@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 /**
  * @typedef {import('../services/characters.service').Hero} Hero
@@ -13,17 +13,19 @@ export function useTeam() {
   /**
    * @type {(member: Hero) => void}
    */
-  const addTeam = (member) => {
-    const id = team.reduce((acc, cur) => (acc.id > 0 ? acc.id : cur.id + 1), 0);
-    setTeam([...team, { ...member, id }]);
-  };
+  const addTeam = useCallback((member) => {
+    setTeam((data) => {
+      const id = data.reduce((acc, cur) => (acc.id > 0 ? acc.id : cur.id + 1), 0);
+      return [...data, { ...member, id }];
+    });
+  }, []);
 
   /**
    * @type {(args: { id: number}) => void }
    */
-  const removeTeam = ({ id }) => {
+  const removeTeam = useCallback(({ id }) => {
     setTeam((data) => data.filter((hero) => hero.id !== id));
-  };
+  }, []);
 
   return [team, addTeam, removeTeam];
 }
