@@ -1,4 +1,7 @@
 {
+  "[feature]": {
+    "editor.formatOnSave": false
+  },
   "[javascript]": {
     "editor.formatOnSave": true
   },

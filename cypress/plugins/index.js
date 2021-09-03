@@ -14,6 +14,7 @@
 
 const path = require('path');
 const { startDevServer } = require('@cypress/vite-dev-server');
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 /**
  * @type {Cypress.PluginConfig}
@@ -22,7 +23,7 @@ const { startDevServer } = require('@cypress/vite-dev-server');
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-
+  on('file:preprocessor', cucumber());
   on('dev-server:start', (options) => startDevServer({
     options,
     viteConfig: {
